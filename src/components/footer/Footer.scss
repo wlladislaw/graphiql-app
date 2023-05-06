@@ -1,0 +1,20 @@
+  .footer {
+    padding: 15px 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__copyright {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.6px;
+        color: white;
+      }   
+  }
+  
