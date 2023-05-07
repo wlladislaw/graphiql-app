@@ -62,6 +62,20 @@
           opacity: 0.4;
         }
       }
+
+      h1{
+        color: rgba(216, 22, 142, 0.481);
+        font-size: 25px;
+        border: 2px solid rgba(216, 22, 142, 0.481);
+        border-radius: 15px;
+        padding: 10px;
+        transition: all 0.3s;
+
+        &:hover{
+            color: rgba(216, 22, 142, 0.97);
+            border: 2px solid rgba(216, 22, 142, 0.97);
+        }
+      }
 }
 
 
