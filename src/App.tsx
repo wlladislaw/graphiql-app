@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Footer } from './components/footer/Footer';
 import './App.scss';
 import SignIn from './components/Auth/SignIn';
+import SignUp from './components/Auth/SignUp';
 
 import { MainPage } from './pages/main-page/MainPage';
 
@@ -12,6 +13,7 @@ export function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/signIn" element={<SignIn />} />
+          <Route path="/SignUp" element={<SignUp />} />
         </Routes>
       </div>
       <Footer />
