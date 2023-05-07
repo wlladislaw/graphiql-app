@@ -1,3 +1,4 @@
+
 import { Footer } from './components/footer/Footer';
 import './App.scss';
 
@@ -7,4 +8,5 @@ export function App() {
       <Footer />
     </div>
   );
+
 }
