@@ -1,4 +1,4 @@
-import { IFooterLogos } from '../../types';
+import { IFooterLogos } from '../../../types';
 import './FooterLogos.scss';
 
 export function FooterLogos({ logos, altClass }: IFooterLogos) {

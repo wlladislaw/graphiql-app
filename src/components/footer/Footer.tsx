@@ -1,6 +1,6 @@
 import './Footer.scss';
-import { LINKS_FOOTER } from '../footer_links/FooterLinks';
-import { FooterLogos } from '../footer_logos/FooterLogos';
+import { LINKS_FOOTER } from './footer_links/FooterLinks';
+import { FooterLogos } from './footer_logos/FooterLogos';
 
 export const Footer = () => {
   return (

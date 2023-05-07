@@ -1,6 +1,5 @@
-
-const Logo = require('../../assets/logo.png');
-const GithubLogo = require('../../assets/github.png');
+const Logo = require('../../../assets/logo.png');
+const GithubLogo = require('../../../assets/github.png');
 
 export const LINKS_FOOTER = [
   {
