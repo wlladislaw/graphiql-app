@@ -1,3 +1,12 @@
+
+import { Footer } from './components/footer/Footer';
+import './App.scss';
+
 export function App() {
-  return <h1>Start graphiql</h1>;
+  return (
+    <div className="main-page">
+      <Footer />
+    </div>
+  );
+
 }

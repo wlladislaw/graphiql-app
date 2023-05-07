@@ -1,0 +1,21 @@
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  column-gap: 10px;
+}
+
+.logos__item {
+  height: 30px;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.logos__item img {
+  height: 100%;
+  width: auto;
+}
+
+.logos__item:hover,
+.logos__item:focus {
+  opacity: 0.4;
+}
