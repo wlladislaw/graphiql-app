@@ -11,7 +11,7 @@ export const Footer = () => {
 
   return (
     <footer className="footer">
-      <Button variant="secondary" size="sm" onClick={onToggle}>
+      <Button variant="outline-dark" size="sm" onClick={onToggle}>
         {toggle ? 'Close links' : 'Open links'}
       </Button>
       <div
