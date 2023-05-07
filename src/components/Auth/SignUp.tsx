@@ -1,22 +1,32 @@
-import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { auth, logInWithEmailAndPassword } from '../../firebase';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth, registerWithEmailAndPassword } from '../../firebase';
 import './Sign.scss';
-function SignIn() {
+function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
+  const register = () => {
+    if (!name) alert('Please enter name');
+    registerWithEmailAndPassword(name, email, password);
+  };
   useEffect(() => {
-    if (loading) {
-      return;
-    }
+    if (loading) return;
     if (user) navigate('/main');
   }, [user, loading]);
   return (
     <div className="sign">
       <div className="sign__container">
+        <input
+          type="text"
+          className="sign__input"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Full Name"
+        />
         <input
           type="text"
           className="sign__input"
@@ -31,17 +41,14 @@ function SignIn() {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
-        <button
-          className="sign__btn"
-          onClick={() => logInWithEmailAndPassword(email, password)}
-        >
-          Login
+        <button className="sign__btn" onClick={register}>
+          Register
         </button>
         <div>
-          Don`t have an account? <Link to="/signUp">Register</Link> now.
+          Already have an account? <Link to="/signIn">Login</Link> now.
         </div>
       </div>
     </div>
   );
 }
-export default SignIn;
+export default SignUp;
