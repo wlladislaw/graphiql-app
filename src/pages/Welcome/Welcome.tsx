@@ -18,15 +18,15 @@ export const Welcome = () => {
       <div className="text-container">
         <p>
           GraphQL is a query language for APIs and a runtime for fulfilling
-          those queries with your existing data. GraphQL provides a complete
+          those queries with your existing data. GraphQL provides
         </p>
         <p>
-          and understandable description of the data in your API, gives clients
-          the power to ask for exactly what they need and nothing more, make
+          a complete and understandable description of the data in your API,
+          gives clients the power to ask for exactly what they need and
         </p>
         <p>
-          it easier to evolve APIs over time, and enables powerful developer
-          tools.
+          nothing more, make it easier to evolve APIs over time, and enables
+          powerful developer tools.
         </p>
       </div>
     </div>
