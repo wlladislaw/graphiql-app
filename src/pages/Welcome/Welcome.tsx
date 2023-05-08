@@ -1,11 +1,11 @@
 import { NavLink } from 'react-router-dom';
-import './MainPage.scss';
+import './Welcome.scss';
 
 const GrafQLLogo = require('../../assets/graphql.svg');
 
-export const MainPage = () => {
+export const Welcome = () => {
   return (
-    <div className="main">
+    <div className="welcome">
       <img src={GrafQLLogo} alt="GrafQLLogo" className="graph-logo" />
       <div className="link">
         <NavLink to="/signIn" style={{ textDecoration: 'none' }}>
