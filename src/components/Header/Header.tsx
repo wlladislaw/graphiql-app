@@ -19,7 +19,7 @@ export function Header() {
         <span className="logo">Logo</span>
         <div className="links">
           <Link className="links-item" to="/">
-            Home
+            Welcome
           </Link>
           <Link className="links-item" to="/about">
             About
