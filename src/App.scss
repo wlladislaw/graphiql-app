@@ -7,7 +7,7 @@
 }
 
 .welcome_page {
-  height: 100vh;
+  height: calc(100vh - 70px);
   position: relative;
   background-color: rgba(15, 15, 15, 0.829);
 }
