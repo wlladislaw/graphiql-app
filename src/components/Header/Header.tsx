@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.scss';
-import { logout } from '../../firebase';
+import { logout, auth } from '../../firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
 // import { useEffect, useState } from 'react';
 
 export function Header() {
@@ -14,11 +15,11 @@ export function Header() {
   //   return () => window.removeEventListener('scroll', handleScroll);
   // });
   // className={`${sticky ? 'sticky' : ''}`}
-
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
   const handleSignOut = () => {
-    console.log('CLICK!');
-
     logout();
+    navigate('/');
   };
   return (
     <header>
@@ -31,9 +32,11 @@ export function Header() {
           <Link className="links_item" to="/about">
             About
           </Link>
-          <button className="signOut_btn" onClick={handleSignOut}>
-            Sign Out
-          </button>
+          {user && (
+            <button className="signOut_btn" onClick={handleSignOut}>
+              Sign Out
+            </button>
+          )}
         </div>
       </nav>
     </header>
