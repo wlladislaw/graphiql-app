@@ -29,8 +29,8 @@ export const Footer = () => {
           <FooterLogos altClass="footer__logos" logos={LINKS_FOOTER} />
         </div>
       </div>
-      <div>
-        <p className="footer__copyright">Designed in 2023</p>
+      <div className="footer__copyright">
+        <p>Designed in 2023</p>
       </div>
     </footer>
   );
