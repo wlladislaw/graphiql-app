@@ -22,7 +22,7 @@ header {
 //   z-index: 100;
 // }
 
-.nav-inner {
+.nav_inner {
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -37,7 +37,7 @@ header {
   font-size: 30px;
 }
 
-.links-item {
+.links_item {
   color: white;
   text-decoration: none;
   font-size: 20px;
@@ -45,7 +45,17 @@ header {
   cursor: pointer;
 }
 
-.nav-inner.fixed {
+.nav_inner.fixed {
   background-color: white;
   transition: .3 ease-in-out;
+}
+
+.signOut_btn {
+  background-color: rgb(37, 36, 36);
+  border: none;
+  outline: none;
+  color: rgba(216, 22, 142, 0.481);
+  font-size: 20px;
+  margin-right: 40px;
+  cursor: pointer;
 }

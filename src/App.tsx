@@ -6,6 +6,7 @@ import SignUp from './components/Auth/SignUp';
 
 import { Welcome } from './pages/Welcome/Welcome';
 import { Header } from './components/Header/Header';
+import Main from './pages/Main/Main';
 
 export function App() {
   return (
@@ -14,6 +15,7 @@ export function App() {
       <div className="welcome_page">
         <Routes>
           <Route path="/" element={<Welcome />} />
+          <Route path="/main" element={<Main />} />
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/signUp" element={<SignUp />} />
         </Routes>
