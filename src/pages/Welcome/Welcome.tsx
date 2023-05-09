@@ -1,19 +1,30 @@
 import { NavLink } from 'react-router-dom';
 import './Welcome.scss';
-
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../firebase';
 const GrafQLLogo = require('../../assets/graphql.svg');
 
 export const Welcome = () => {
+  const [user] = useAuthState(auth);
   return (
     <div className="welcome">
       <img src={GrafQLLogo} alt="GrafQLLogo" className="graph-logo" />
       <div className="link">
-        <NavLink to="/signIn" style={{ textDecoration: 'none' }}>
-          <h1>Sign in</h1>
-        </NavLink>
-        <NavLink to="/signUp" style={{ textDecoration: 'none' }}>
-          <h1>Sign up</h1>
-        </NavLink>
+        {!user && (
+          <>
+            <NavLink to="/signIn" style={{ textDecoration: 'none' }}>
+              <h1>Sign in</h1>
+            </NavLink>
+            <NavLink to="/signUp" style={{ textDecoration: 'none' }}>
+              <h1>Sign up</h1>
+            </NavLink>
+          </>
+        )}
+        {user && (
+          <NavLink to="/main" style={{ textDecoration: 'none' }}>
+            <h1>Go to Main Page</h1>
+          </NavLink>
+        )}
       </div>
       <div className="text-container">
         <p>
