@@ -1,7 +1,7 @@
   .footer {
     position: absolute;
     bottom: 0;
-    padding: 15px 10rem;
+    padding: 18px 10rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -16,7 +16,8 @@
         font-size: 12px;
         line-height: 16px;
         letter-spacing: 0.6px;
-        color: white;
+        color: rgb(19, 19, 19);
+        width: 20%;
       }   
   }
   

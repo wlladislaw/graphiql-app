@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './Header.scss';
+const graphLogo = require('../../assets/GraphQL_Logo.svg.png');
 import { logout, auth } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 // import { useEffect, useState } from 'react';
@@ -24,7 +25,7 @@ export function Header() {
   return (
     <header>
       <nav className="nav_inner">
-        <span className="logo">Logo</span>
+        <img src={graphLogo} alt="graphLogo" width={35} height={35} />
         <div className="links">
           <Link className="links_item" to="/">
             Welcome
