@@ -10,7 +10,7 @@ import { Header } from './components/Header/Header';
 import Main from './pages/Main/Main';
 import { ErrorPage } from './pages/ErrorPage/ErrorPage';
 import { PropsWithChildren } from 'react';
-import About from './components/About/About';
+import About from './pages/About/About';
 
 export function App() {
   const [user] = useAuthState(auth);
