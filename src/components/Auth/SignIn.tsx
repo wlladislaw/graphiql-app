@@ -3,7 +3,8 @@ import * as Yup from 'yup';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth, logInWithEmailAndPassword } from '../../firebase';
+import { auth, logInWithEmailAndPassword, db } from '../../firebase';
+import './Sign.scss';
 
 const SingInForm = () => {
   const [user, loading] = useAuthState(auth);
@@ -38,9 +39,8 @@ const SingInForm = () => {
     }),
 
     onSubmit: (values, { resetForm }) => {
-      setEmail(email);
+      setEmail(values.email);
       setPassword(password);
-      alert('Your are welcome');
       logInWithEmailAndPassword(email, password);
       resetForm({});
     },

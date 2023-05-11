@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app';
+
 import {
   GoogleAuthProvider,
   getAuth,
@@ -8,6 +9,7 @@ import {
   sendPasswordResetEmail,
   signOut,
 } from 'firebase/auth';
+
 import {
   getFirestore,
   query,
@@ -31,6 +33,7 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 const googleProvider = new GoogleAuthProvider();
+
 const signInWithGoogle = async () => {
   try {
     const res = await signInWithPopup(auth, googleProvider);
@@ -89,6 +92,7 @@ const sendPasswordReset = async (email: string) => {
     // alert(err.message);
   }
 };
+
 const logout = () => {
   signOut(auth);
 };
