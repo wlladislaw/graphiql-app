@@ -10,6 +10,7 @@ import { Header } from './components/Header/Header';
 import Main from './pages/Main/Main';
 import { ErrorPage } from './pages/ErrorPage/ErrorPage';
 import { PropsWithChildren } from 'react';
+import About from './components/About/About';
 
 export function App() {
   const [user] = useAuthState(auth);
@@ -36,6 +37,7 @@ export function App() {
           />
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/signUp" element={<SignUp />} />
+          <Route path="/about" element={<About />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
