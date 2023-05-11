@@ -15,9 +15,13 @@ export function App() {
   const [user] = useAuthState(auth);
   const ProtectedRoute: React.FC<PropsWithChildren> = ({ children }) => {
     if (user === null || user === undefined) {
-      return <Navigate to="/" />;
+      return <SignIn />;
     }
-    return <>{children}</>;
+    // else if (user && children!.type.name == 'SignIn') {
+    //   return <Navigate to="/main" />;
+    // }
+    <Navigate to="/main" />;
+    return <Main />;
   };
 
   return (
@@ -34,7 +38,14 @@ export function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/signIn" element={<SignIn />} />
+          <Route
+            path="/signIn"
+            element={
+              <ProtectedRoute>
+                <SignIn />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/signUp" element={<SignUp />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
