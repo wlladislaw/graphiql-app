@@ -12,16 +12,14 @@ import { ErrorPage } from './pages/ErrorPage/ErrorPage';
 import { PropsWithChildren } from 'react';
 
 export function App() {
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
+
   const ProtectedRoute: React.FC<PropsWithChildren> = ({ children }) => {
-    if (user === null || user === undefined) {
+    if (loading || user === undefined) return <h3>loading...</h3>;
+    if (user === null) {
       return <SignIn />;
     }
-    // else if (user && children!.type.name == 'SignIn') {
-    //   return <Navigate to="/main" />;
-    // }
-    <Navigate to="/main" />;
-    return <Main />;
+    return <>{children}</>;
   };
 
   return (
@@ -38,14 +36,7 @@ export function App() {
               </ProtectedRoute>
             }
           />
-          <Route
-            path="/signIn"
-            element={
-              <ProtectedRoute>
-                <SignIn />
-              </ProtectedRoute>
-            }
-          />
+          <Route path="/signIn" element={<SignIn />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
