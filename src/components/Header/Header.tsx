@@ -25,7 +25,9 @@ export function Header() {
   return (
     <header>
       <nav className="nav_inner">
-        <img src={graphLogo} alt="graphLogo" width={35} height={35} />
+        <Link to="/">
+          <img src={graphLogo} alt="graphLogo" width={35} height={35} />
+        </Link>
         <div className="links">
           <Link className="links_item" to="/">
             Welcome

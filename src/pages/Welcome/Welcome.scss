@@ -14,13 +14,13 @@
         gap: 10rem;
     }
     .text-container{
-        width: 60%;
+        width: 50%;
         p{
             font-size: 1rem;
             color: azure;
             white-space: nowrap;
             overflow: hidden;
-            margin: 3px;
+            margin-bottom: 3px;
             width: 100%;
             animation: typing 4s steps(60, end);
             &:nth-child(1){
