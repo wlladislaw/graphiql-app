@@ -36,8 +36,14 @@ export function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/signIn" element={<SignIn />} />
-          <Route path="/signUp" element={<SignUp />} />
+          <Route
+            path="/signIn"
+            element={loading ? <Navigate to="/main" /> : <SignIn />}
+          />
+          <Route
+            path="/signUp"
+            element={loading ? <Navigate to="/main" /> : <SignUp />}
+          />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
