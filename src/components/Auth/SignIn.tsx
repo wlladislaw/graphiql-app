@@ -13,7 +13,6 @@ function SignIn() {
       return;
     }
     if (user) navigate('/main');
-    console.log('user: ', user);
   }, [user, loading]);
   return (
     <div className="sign">
