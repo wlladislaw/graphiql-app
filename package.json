@@ -77,10 +77,12 @@
   "dependencies": {
     "bootstrap": "^5.2.3",
     "firebase": "^9.16.0",
+    "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.1.1",
-    "react-router-dom": "^6.11.1"
+    "react-router-dom": "^6.11.1",
+    "yup": "^1.1.1"
   }
 }

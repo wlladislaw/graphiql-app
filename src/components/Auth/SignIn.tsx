@@ -1,47 +1,83 @@
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth, logInWithEmailAndPassword } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth, logInWithEmailAndPassword, db } from '../../firebase';
 import './Sign.scss';
-function SignIn() {
+
+const SingInForm = () => {
+  const [user, loading] = useAuthState(auth);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
+
   useEffect(() => {
     if (loading) {
       return;
     }
     if (user) navigate('/main');
   }, [user, loading]);
-  return (
-    <div className="sign">
-      <div className="sign__container">
-        <input
-          type="text"
-          className="sign__input"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail Address"
-        />
-        <input
-          type="password"
-          className="sign__input"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-        />
-        <button
-          className="sign__btn"
-          onClick={() => logInWithEmailAndPassword(email, password)}
-        >
-          Login
-        </button>
-        <div>
-          Don`t have an account? <Link to="/signUp">Register</Link> now.
-        </div>
-      </div>
-    </div>
+
+  const regex = new RegExp(
+    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
   );
-}
-export default SignIn;
+
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email('Invalid email')
+        .required('This field is required!'),
+      password: Yup.string()
+        .matches(regex, 'Invalid password')
+        .required('A password is required'),
+    }),
+
+    onSubmit: (values, { resetForm }) => {
+      logInWithEmailAndPassword(values.email, values.password);
+      resetForm({});
+    },
+  });
+
+  return (
+    <form className="form" onSubmit={formik.handleSubmit}>
+      <h2>Sing In</h2>
+      <label htmlFor="email">Your email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        value={formik.values.email}
+        onChange={formik.handleChange}
+        placeholder="krambambulia@.com"
+        onBlur={formik.handleBlur}
+      />
+      {formik.errors.email && formik.touched.email ? (
+        <div className="error">{formik.errors.email}</div>
+      ) : null}
+      <label htmlFor="password">Your password</label>
+      <input
+        id="password"
+        name="password"
+        type="string"
+        value={formik.values.password}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+      />
+      {formik.errors.password && formik.touched.password ? (
+        <div className="error">{formik.errors.password}</div>
+      ) : null}
+      <button type="submit">Login</button>
+      <div className="link">
+        Don`t have an account? <Link to="/signUp">Register</Link> now.
+      </div>
+    </form>
+  );
+};
+
+export default SingInForm;

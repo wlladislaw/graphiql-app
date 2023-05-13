@@ -10,6 +10,7 @@ import { Header } from './components/Header/Header';
 import Main from './pages/Main/Main';
 import { ErrorPage } from './pages/ErrorPage/ErrorPage';
 import { PropsWithChildren } from 'react';
+import About from './pages/About/About';
 
 export function App() {
   const [user, loading] = useAuthState(auth);
@@ -36,6 +37,7 @@ export function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="/about" element={<About />} />
           <Route
             path="/signIn"
             element={loading ? <Navigate to="/main" /> : <SignIn />}
