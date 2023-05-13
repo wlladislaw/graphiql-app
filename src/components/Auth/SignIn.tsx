@@ -39,9 +39,7 @@ const SingInForm = () => {
     }),
 
     onSubmit: (values, { resetForm }) => {
-      setEmail(values.email);
-      setPassword(password);
-      logInWithEmailAndPassword(email, password);
+      logInWithEmailAndPassword(values.email, values.password);
       resetForm({});
     },
   });
