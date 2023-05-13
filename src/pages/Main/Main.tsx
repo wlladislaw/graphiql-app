@@ -1,8 +1,20 @@
+import Editor from '../../components/Editor/Editor';
+import QueryInput from '../../components/QueryInput/QueryInput';
+
 function Main() {
   return (
-    <h1 style={{ color: 'yellow' }}>
-      Main, where will be functional for graphiql
-    </h1>
+    <main className="graphiql_container">
+      <QueryInput />
+      <Editor />
+      {/*
+
+      editor section component
+      response section component (aside)
+      query variables section component(inside editor)
+
+      */}
+      <h1> Components</h1>
+    </main>
   );
 }
 
