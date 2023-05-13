@@ -1,8 +1,14 @@
+import Editor from '../../components/Editor/Editor';
+import QueryInput from '../../components/QueryInput/QueryInput';
+import Response from '../../components/Response/Response';
+import './Main.scss';
 function Main() {
   return (
-    <h1 style={{ color: 'yellow' }}>
-      Main, where will be functional for graphiql
-    </h1>
+    <main className="graphiql_container">
+      <QueryInput />
+      <Editor />
+      <Response />
+    </main>
   );
 }
 
