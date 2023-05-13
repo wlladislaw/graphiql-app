@@ -13,10 +13,12 @@ import { PropsWithChildren } from 'react';
 import About from './pages/About/About';
 
 export function App() {
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
+
   const ProtectedRoute: React.FC<PropsWithChildren> = ({ children }) => {
-    if (user === null || user === undefined) {
-      return <Navigate to="/" />;
+    if (loading || user === undefined) return <h3>loading...</h3>;
+    if (user === null) {
+      return <SignIn />;
     }
     return <>{children}</>;
   };
@@ -35,9 +37,15 @@ export function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/signIn" element={<SignIn />} />
-          <Route path="/signUp" element={<SignUp />} />
           <Route path="/about" element={<About />} />
+          <Route
+            path="/signIn"
+            element={loading ? <Navigate to="/main" /> : <SignIn />}
+          />
+          <Route
+            path="/signUp"
+            element={loading ? <Navigate to="/main" /> : <SignUp />}
+          />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
