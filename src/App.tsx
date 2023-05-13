@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { Footer } from './components/footer/Footer';
+import { Footer } from './components/Footer/Footer';
 import './App.scss';
 import SignIn from './components/Auth/SignIn';
 import SignUp from './components/Auth/SignUp';

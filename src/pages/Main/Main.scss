@@ -1,3 +1,6 @@
 .graphiql_container{
-  
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  height:10vh;
+  gap: 5px;
 }

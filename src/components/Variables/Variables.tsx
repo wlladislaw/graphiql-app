@@ -1,7 +1,5 @@
-import React from 'react';
-
 const Variables = () => {
-  return <div className="variables_container"></div>;
+  return <div className="variables_container">variables section</div>;
 };
 
 export default Variables;
