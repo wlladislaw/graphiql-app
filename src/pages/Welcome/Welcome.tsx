@@ -28,10 +28,12 @@ export const Welcome = () => {
           </NavLink>
         )}
       </div>
-      <div className="text-container">
-        <p>{t('description1')}</p>
-        <p>{t('description2')}</p>
-        <p>{t('description3')}</p>
+      <div className="description">
+        <div className="text-container">
+          <p>{t('description1')}</p>
+          <p>{t('description2')}</p>
+          <p>{t('description3')}</p>
+        </div>
       </div>
     </div>
   );
