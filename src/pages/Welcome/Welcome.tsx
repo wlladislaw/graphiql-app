@@ -2,10 +2,12 @@ import { NavLink } from 'react-router-dom';
 import './Welcome.scss';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
+import { useTranslation } from 'react-i18next';
 const GrafQLLogo = require('../../assets/graphql.svg');
 
 export const Welcome = () => {
   const [user] = useAuthState(auth);
+  const { t } = useTranslation();
   return (
     <div className="welcome">
       <img src={GrafQLLogo} alt="GrafQLLogo" className="graph-logo" />
@@ -13,32 +15,23 @@ export const Welcome = () => {
         {!user && (
           <>
             <NavLink to="/signIn" style={{ textDecoration: 'none' }}>
-              <h1>Sign in</h1>
+              <h1>{t('sing-in')}</h1>
             </NavLink>
             <NavLink to="/signUp" style={{ textDecoration: 'none' }}>
-              <h1>Sign up</h1>
+              <h1>{t('sing-up')}</h1>
             </NavLink>
           </>
         )}
         {user && (
           <NavLink to="/main" style={{ textDecoration: 'none' }}>
-            <h1>Go to Main Page</h1>
+            <h1>{t('go-to-mainpage')}</h1>
           </NavLink>
         )}
       </div>
       <div className="text-container">
-        <p>
-          GraphQL is a query language for APIs and a runtime for fulfilling
-          those queries with your existing data. GraphQL provides
-        </p>
-        <p>
-          a complete and understandable description of the data in your API,
-          gives clients the power to ask for exactly what they need and
-        </p>
-        <p>
-          nothing more, make it easier to evolve APIs over time, and enables
-          powerful developer tools.
-        </p>
+        <p>{t('description1')}</p>
+        <p>{t('description2')}</p>
+        <p>{t('description3')}</p>
       </div>
     </div>
   );

@@ -39,6 +39,7 @@ header {
 
 .links_item {
   color: white;
+  width: 20rem;
   text-decoration: none;
   font-size: 20px;
   margin-right: 40px;
@@ -58,4 +59,12 @@ header {
   font-size: 20px;
   margin-right: 40px;
   cursor: pointer;
+}
+
+.language_button{
+  color:#fff; 
+  background:rgba(216, 22, 142, 0.481);
+  padding:5px;
+  border-radius:100%;
+  font-size: 10px;
 }
