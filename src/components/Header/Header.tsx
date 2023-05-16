@@ -6,20 +6,6 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-type Langs = {
-  en: {
-    nativeName: string;
-  };
-  ru: {
-    nativeName: string;
-  };
-};
-
-const langs: Langs = {
-  en: { nativeName: 'English' },
-  ru: { nativeName: 'Russian' },
-};
-
 // import { useEffect, useState } from 'react';
 
 export function Header() {
@@ -33,7 +19,7 @@ export function Header() {
   //   return () => window.removeEventListener('scroll', handleScroll);
   // });
   // className={`${sticky ? 'sticky' : ''}`}
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
   const { t, i18n } = useTranslation();
   const [user] = useAuthState(auth);
   const navigate = useNavigate();

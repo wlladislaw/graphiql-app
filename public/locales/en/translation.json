@@ -7,5 +7,8 @@
     "description2": "a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and",
     "description3": "nothing more, make it easier to evolve APIs over time, and enables powerful developer tools.",
     "sing-in": "Sing In",
-    "sing-up": "Sing Up"
+    "sing-up": "Sing Up",
+    "close":"Close",
+    "authors":"Authors",
+    "designed": "Designed in 2023"
 }
