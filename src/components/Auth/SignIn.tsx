@@ -76,7 +76,7 @@ const SingInForm = () => {
       ) : null}
       <button type="submit">{t('login')}</button>
       <div className="link">
-        {t('question')} <Link to="/signUp">{t('register')}</Link> now.
+        {t('question')} <Link to="/signUp">{t('register')}</Link> {t('now')}.
       </div>
     </form>
   );

@@ -13,7 +13,11 @@
     "designed": "Designed in 2023",
     "login": "Login",
     "email": "Your email",
+    "name": "Your Name",
     "password": "Your password",
     "register": "Register",
-    "question": "Don`t have an account?"
+    "question": "Don`t have an account? ",
+    "submit": "Submit",
+    "have-account": "Already have an account? ",
+    "now": "now"
 }

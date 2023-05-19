@@ -4,12 +4,14 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, registerWithEmailAndPassword } from '../../firebase';
+import { useTranslation } from 'react-i18next';
 
 const SingInForm = () => {
   const [user, loading] = useAuthState(auth);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const { t } = useTranslation();
+  // const [name, setName] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -52,8 +54,8 @@ const SingInForm = () => {
 
   return (
     <form className="form" onSubmit={formik.handleSubmit}>
-      <h2>Sing Up</h2>
-      <label htmlFor="name">Your Name</label>
+      <h2>{t('sing-up')}</h2>
+      <label htmlFor="name">{t('name')}</label>
       <input
         id="name"
         name="name"
@@ -66,7 +68,7 @@ const SingInForm = () => {
       {formik.errors.name && formik.touched.name ? (
         <div className="error">{formik.errors.name}</div>
       ) : null}
-      <label htmlFor="email">Your email</label>
+      <label htmlFor="email">{t('email')}</label>
       <input
         id="email"
         name="email"
@@ -79,7 +81,7 @@ const SingInForm = () => {
       {formik.errors.email && formik.touched.email ? (
         <div className="error">{formik.errors.email}</div>
       ) : null}
-      <label htmlFor="password">Your password</label>
+      <label htmlFor="password">{t('password')}</label>
       <input
         id="password"
         name="password"
@@ -91,9 +93,10 @@ const SingInForm = () => {
       {formik.errors.password && formik.touched.password ? (
         <div className="error">{formik.errors.password}</div>
       ) : null}
-      <button type="submit">Submit</button>
+      <button type="submit">{t('submit')}</button>
       <div className="link">
-        Already have an account? <Link to="/signIn">Login</Link> now.
+        {t('have-account')}
+        <Link to="/signIn">{t('login')}</Link> {t('now')}.
       </div>
     </form>
   );
