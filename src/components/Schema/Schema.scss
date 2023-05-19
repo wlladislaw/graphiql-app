@@ -9,9 +9,9 @@
 }
 
 .schema_container {
-
+  z-index: 2;
   height: 100vh;
-  width: 200px;
+  width: 320px;
   position: fixed;
   background-color: white;
   top: 50%;
@@ -20,30 +20,27 @@
 
 }
 
+.docs_container {
+  margin: 10px 10px;
+}
+
 .expanded_btn {
 
   position: relative;
   top: 20%;
   right: 55px;
   padding: 5px;
-
-
   transform: rotate(270deg);
-
 
 }
 
 .schema_input {
-
-  margin-top: 100px;
+  margin-left: 15px;
+  margin-top: 120px;
+  margin-bottom: 20px;
   color: #333;
-
   border-radius: 0.2rem;
-
   border: solid rosybrown;
   width: 90%;
-
-
-
 
 }

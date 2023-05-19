@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Schema.scss';
 
 const Schema = () => {
@@ -26,7 +26,12 @@ const Schema = () => {
             type="text"
             value={inputValue}
             onChange={handleInputChange}
+            placeholder="Search the schema..."
           />
+          <div className="docs_container">
+            <h2>Queries</h2>
+            <p>No GraphQL schema available</p>
+          </div>
           <button className="expanded_btn" onClick={handleButtonClick}>
             Schema
           </button>
