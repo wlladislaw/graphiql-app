@@ -39,10 +39,15 @@ header {
 
 .links_item {
   color: white;
+  width: 20rem;
   text-decoration: none;
   font-size: 20px;
   margin-right: 40px;
   cursor: pointer;
+  transition: all 0.5s;
+  &:hover{
+    color: rgba(216, 22, 142, 0.97);
+  }
 }
 
 .nav_inner.fixed {
@@ -58,4 +63,16 @@ header {
   font-size: 20px;
   margin-right: 40px;
   cursor: pointer;
+  transition: all 0.5s;
+  &:hover{
+    color: rgba(216, 22, 142, 0.97);
+  }
+}
+
+.language_button{
+  color:#fff; 
+  background:rgba(216, 22, 142, 0.481);
+  padding:5px;
+  border-radius:100%;
+  font-size: 10px;
 }

@@ -3,24 +3,39 @@ import { useState } from 'react';
 import { LINKS_FOOTER } from './footer_links/FooterLinks';
 import { FooterLogos } from './footer_logos/FooterLogos';
 import Button from 'react-bootstrap/Button';
+import { useTranslation } from 'react-i18next';
 
 export const Footer = () => {
   const [toggle, setToggle] = useState(false);
-
+  const { t } = useTranslation();
   const onToggle = () => setToggle(!toggle);
 
   return (
     <footer className="footer">
-      <Button
-        variant="outline-dark"
-        style={{
-          width: '80px',
-          fontSize: '14px',
-        }}
-        onClick={onToggle}
-      >
-        {toggle ? 'Close ' : 'Authors'}
-      </Button>
+      {toggle ? (
+        <Button
+          variant="outline-dark"
+          style={{
+            width: '80px',
+            fontSize: '14px',
+          }}
+          onClick={onToggle}
+        >
+          {t('close')}
+        </Button>
+      ) : (
+        <Button
+          variant="outline-dark"
+          style={{
+            width: '80px',
+            fontSize: '14px',
+          }}
+          onClick={onToggle}
+        >
+          {t('authors')}
+        </Button>
+      )}
+
       <div
         className="container"
         style={toggle ? { display: 'flex' } : { display: 'none' }}
@@ -30,7 +45,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="footer__copyright">
-        <p>Designed in 2023</p>
+        <p>{t('designed')}</p>
       </div>
     </footer>
   );

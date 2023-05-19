@@ -5,11 +5,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, logInWithEmailAndPassword, db } from '../../firebase';
 import './Sign.scss';
+import { useTranslation } from 'react-i18next';
 
 const SingInForm = () => {
   const [user, loading] = useAuthState(auth);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,7 +22,7 @@ const SingInForm = () => {
   }, [user, loading]);
 
   const regex = new RegExp(
-    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
+    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
   );
 
   const formik = useFormik({
@@ -46,8 +48,8 @@ const SingInForm = () => {
 
   return (
     <form className="form" onSubmit={formik.handleSubmit}>
-      <h2>Sing In</h2>
-      <label htmlFor="email">Your email</label>
+      <h2>{t('sing-in')}</h2>
+      <label htmlFor="email">{t('email')}</label>
       <input
         id="email"
         name="email"
@@ -60,7 +62,7 @@ const SingInForm = () => {
       {formik.errors.email && formik.touched.email ? (
         <div className="error">{formik.errors.email}</div>
       ) : null}
-      <label htmlFor="password">Your password</label>
+      <label htmlFor="password">{t('password')}</label>
       <input
         id="password"
         name="password"
@@ -72,9 +74,9 @@ const SingInForm = () => {
       {formik.errors.password && formik.touched.password ? (
         <div className="error">{formik.errors.password}</div>
       ) : null}
-      <button type="submit">Login</button>
+      <button type="submit">{t('login')}</button>
       <div className="link">
-        Don`t have an account? <Link to="/signUp">Register</Link> now.
+        {t('question')} <Link to="/signUp">{t('register')}</Link> {t('now')}.
       </div>
     </form>
   );
