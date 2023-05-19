@@ -10,5 +10,10 @@
     "sing-up": "Sing Up",
     "close":"Close",
     "authors":"Authors",
-    "designed": "Designed in 2023"
+    "designed": "Designed in 2023",
+    "login": "Login",
+    "email": "Your email",
+    "password": "Your password",
+    "register": "Register",
+    "question": "Don`t have an account?"
 }
