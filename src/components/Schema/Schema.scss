@@ -6,6 +6,11 @@
   word-break: break-all;
   transform: translateY(-50%);
   transform: rotate(270deg);
+  padding: 12px;
+  background-color: green;
+  border-radius: 10%;
+  border: 0;
+  color: azure;
 }
 
 .schema_container {
@@ -25,7 +30,10 @@
 }
 
 .expanded_btn {
-
+  background-color: green;
+  border-radius: 10%;
+  border: 0;
+  color: azure;
   position: relative;
   top: 20%;
   right: 55px;

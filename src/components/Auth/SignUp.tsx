@@ -46,7 +46,6 @@ const SingInForm = () => {
     }),
 
     onSubmit: (values, { resetForm }) => {
-      console.log(console.log(JSON.stringify(values, null, 2)));
       registerWithEmailAndPassword(values.name, values.email, values.password);
       resetForm({});
     },
