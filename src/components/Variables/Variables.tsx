@@ -11,7 +11,7 @@ const Variables = () => {
   return (
     <div className="container-var">
       <button onClick={handler} className="variables_container">
-        {showTextArea ? 'hide variables' : 'show variables'}
+        {showTextArea ? 'Hide variables' : 'Show variables'}
       </button>
       {showTextArea && <textarea className="text-area"></textarea>}
     </div>
