@@ -1,4 +1,4 @@
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.scss';
 const graphLogo = require('../../assets/GraphQL_Logo.svg.png');
 import { logout, auth } from '../../firebase';
@@ -6,19 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-// import { useEffect, useState } from 'react';
-
 export function Header() {
-  // const [sticky, setSticky] = useState(false);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setSticky(window.scrollY > 200);
-  //   };
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // });
-  // className={`${sticky ? 'sticky' : ''}`}
   const [toggle, setToggle] = useState(false);
   const { t, i18n } = useTranslation();
   const [user] = useAuthState(auth);
