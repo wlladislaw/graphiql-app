@@ -1,23 +1,27 @@
 .container-var {
   position: absolute;
+  font-family: 'Source Code Pro','Consolas','Inconsolata','Droid Sans Mono','Monaco',monospace;
+  font-family: 14px;
   bottom: 0;
   left: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .variables_container {
-  width: 275px;
+  width: 20%;
   background-color: rgb(72, 66, 66);
-  border: 2px solid rgb(72, 1, 72);
+  border: 2px solid rgba(109, 109, 144, 0.501);
   border-radius: 5px;
 }
 
 .text-area {
-  width: 275px;
   height: 100px;
   background-color: rgb(72, 66, 66);
-  color: rgb(204, 147, 41);
-  border: 2px solid rgb(72, 1, 72);
+  padding: 5px 10px;
+  font-family: 14px;
+  border: 2px solid rgba(109, 109, 144, 0.501);
   border-radius: 5px;
+  outline: none;
 }
