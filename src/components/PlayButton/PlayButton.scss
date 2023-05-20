@@ -1,0 +1,13 @@
+.button{
+    position: absolute;
+    top: -8px;
+    right: -40px;
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.button:hover #background{
+    fill: rgb(226, 229, 232);
+}
+
