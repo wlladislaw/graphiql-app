@@ -75,9 +75,11 @@
     ]
   },
   "dependencies": {
+    "@apollo/client": "^3.7.14",
     "bootstrap": "^5.2.3",
     "firebase": "^9.16.0",
     "formik": "^2.2.9",
+    "graphql": "^16.6.0",
     "i18next": "^22.4.15",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.2.0",
