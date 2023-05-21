@@ -6,18 +6,34 @@
   flex-direction: column;
 }
 
-.variables_container {
-  width: 275px;
+.btn-hide {
+  width: 400px;
+  height: 10px;
+  background-color: rgb(72, 66, 66);
+  border: 0;
+  cursor: pointer;
+}
+
+.variables_container-1 {
+  width: 200px;
   background-color: rgb(72, 66, 66);
   border: 2px solid rgb(72, 1, 72);
-  border-radius: 5px;
+  border: 0;
+  color: grey;
+}
+
+.variables_container-2 {
+  width: 200px;
+  background-color: rgb(72, 66, 66);
+  border: 2px solid rgb(72, 1, 72);
+  border: 0;
+  color: white;
 }
 
 .text-area {
-  width: 275px;
+  width: 400px;
   height: 100px;
   background-color: rgb(72, 66, 66);
   color: rgb(204, 147, 41);
-  border: 2px solid rgb(72, 1, 72);
-  border-radius: 5px;
+  border: 0;
 }
