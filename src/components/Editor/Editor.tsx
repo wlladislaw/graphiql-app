@@ -4,8 +4,7 @@ import PlayButton from '../../components/PlayButton/PlayButton';
 import { useState } from 'react';
 function Editor() {
   const [input, setInput] = useState('');
-  console.log('input: ', input);
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInput(e.target.value);
   };
   return (
