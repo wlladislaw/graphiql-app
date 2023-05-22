@@ -10,6 +10,9 @@ import {
 } from '@apollo/client';
 import '../src/i18n';
 import { Suspense } from 'react';
+import { Provider } from 'react-redux';
+import { setupStore } from './redux/store';
+const store = setupStore();
 
 const client = new ApolloClient({
   uri: 'https://rickandmortyapi.com/graphql',
@@ -36,10 +39,12 @@ const root = createRoot(rootElement!);
 
 root.render(
   <Suspense fallback={<div>Loading...</div>}>
-    <ApolloProvider client={client}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ApolloProvider>
+    <Provider store={store}>
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ApolloProvider>
+    </Provider>
   </Suspense>
 );

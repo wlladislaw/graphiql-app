@@ -1,11 +1,14 @@
 import Variables from '../Variables/Variables';
 import './Editor.scss';
 import PlayButton from '../../components/PlayButton/PlayButton';
-import { useState } from 'react';
+import { useAppDispatch } from '../../hooks/redux';
+import { editorSlice } from '../../redux/reducers/editorSlice';
+
 function Editor() {
-  const [input, setInput] = useState('');
+  const dispatch = useAppDispatch();
+  const { changeEditorTextArea } = editorSlice.actions;
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setInput(e.target.value);
+    dispatch(changeEditorTextArea(e.target.value));
   };
   return (
     <section className="editor_container">
