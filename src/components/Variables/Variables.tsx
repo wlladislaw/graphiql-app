@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './variables.scss';
 
 const Variables = () => {
+
   const [showTextAreaQuery, setShowTextAreaQuery] = useState(false);
   const [showTextAreaHttp, setShowTextAreaHttp] = useState(false);
   const [classQuery, setClassQuery] = useState('variables_container-1');
@@ -26,6 +27,7 @@ const Variables = () => {
     setShowTextAreaQuery(false);
     setClassQuery('variables_container-1');
     setClassHttp('variables_container-1');
+
   };
 
   return (
@@ -41,6 +43,7 @@ const Variables = () => {
       </div>
       {showTextAreaQuery && <textarea className="text-area"></textarea>}
       {showTextAreaHttp && <textarea className="text-area"></textarea>}
+
     </div>
   );
 };
