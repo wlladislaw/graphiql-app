@@ -1,5 +1,13 @@
+import { useTranslation } from 'react-i18next';
+import './About.scss';
+
 const About = () => {
-  return <div style={{ color: 'white' }}>About</div>;
+  const { t } = useTranslation();
+  return (
+    <div className="about_text">
+      <p>{t('about_description')}</p>
+    </div>
+  );
 };
 
 export default About;
