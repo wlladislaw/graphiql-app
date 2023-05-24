@@ -3,7 +3,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 export const editorSlice = createSlice({
   name: 'editorTextarea',
   initialState: {
-    textAreaValue: '',
+    textAreaValue: ``,
   },
   reducers: {
     changeEditorTextArea(state, action: PayloadAction<string>) {
