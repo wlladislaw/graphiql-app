@@ -1,7 +1,9 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import editorReducer from './reducers/editorSlice';
+import responseReducer from './reducers/responseSlice';
 const rootReducer = combineReducers({
   editorReducer,
+  responseReducer,
 });
 
 export const setupStore = () => {

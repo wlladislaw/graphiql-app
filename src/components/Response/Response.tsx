@@ -1,10 +1,10 @@
 import './Response.scss';
+import { useAppSelector } from '../../hooks/redux';
+
 function Response() {
-  return (
-    <aside className="response_container">
-      Hit the Play Button to get a response here
-    </aside>
-  );
+  const { apiResponse } = useAppSelector((state) => state.responseReducer);
+  console.log('apiResponse: ', apiResponse);
+  return <aside className="response_container">{apiResponse}</aside>;
 }
 
 export default Response;

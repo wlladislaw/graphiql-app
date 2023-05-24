@@ -1,10 +1,13 @@
-import { useAppSelector } from '../../hooks/redux';
+import { useAppSelector, useAppDispatch } from '../../hooks/redux';
+import { responseSlice } from '../../redux/reducers/responseSlice';
 import './PlayButton.scss';
 const mainButton = require('../../assets/mainButton.svg');
 
 function PlayButton() {
+  const dispatch = useAppDispatch();
   const { textAreaValue } = useAppSelector((state) => state.editorReducer);
 
+  const { changeAPIResponse } = responseSlice.actions;
   const handleGetResponse = async () => {
     fetch('https://rickandmortyapi.com/graphql', {
       method: 'POST',
@@ -19,7 +22,7 @@ function PlayButton() {
       }),
     })
       .then((res) => res.json())
-      .then((result) => console.log('IN BUTTON CLICK', result));
+      .then((result) => dispatch(changeAPIResponse(JSON.stringify(result))));
   };
 
   return (
