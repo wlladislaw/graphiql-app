@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import './variables.scss';
+import { useTranslation } from 'react-i18next';
 
 const Variables = () => {
-
   const [showTextAreaQuery, setShowTextAreaQuery] = useState(false);
   const [showTextAreaHttp, setShowTextAreaHttp] = useState(false);
   const [classQuery, setClassQuery] = useState('variables_container-1');
   const [classHttp, setClassHttp] = useState('variables_container-1');
+  const { t } = useTranslation();
 
   const handlerQuery = () => {
     setShowTextAreaQuery(true);
@@ -27,7 +28,6 @@ const Variables = () => {
     setShowTextAreaQuery(false);
     setClassQuery('variables_container-1');
     setClassHttp('variables_container-1');
-
   };
 
   return (
@@ -35,15 +35,14 @@ const Variables = () => {
       <button onClick={handlerHide} className="btn-hide"></button>
       <div>
         <button onClick={handlerQuery} className={classQuery}>
-          QUERY VARIABLES
+          {t('query_variables')}
         </button>
         <button onClick={handlerHttp} className={classHttp}>
-          HTTP HEADERS
+          {t('http_variables')}
         </button>
       </div>
       {showTextAreaQuery && <textarea className="text-area"></textarea>}
       {showTextAreaHttp && <textarea className="text-area"></textarea>}
-
     </div>
   );
 };

@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import './Schema.scss';
+import { useTranslation } from 'react-i18next';
 
 const Schema = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [inputValue, setInputValue] = useState('');
+  const { t } = useTranslation();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.currentTarget.value);
@@ -17,7 +19,7 @@ const Schema = () => {
     <div>
       {!isExpanded ? (
         <button className="schema_btn" onClick={handleButtonClick}>
-          Schema
+          {t('schema')}
         </button>
       ) : (
         <div className="schema_container">
@@ -26,14 +28,14 @@ const Schema = () => {
             type="text"
             value={inputValue}
             onChange={handleInputChange}
-            placeholder="Search the schema..."
+            placeholder={t('search_input')}
           />
           <div className="docs_container">
-            <h2>Queries</h2>
-            <p>No GraphQL schema available</p>
+            <h2>{t('queries')}</h2>
+            <p>{t('schema_message')}</p>
           </div>
           <button className="expanded_btn" onClick={handleButtonClick}>
-            Schema
+            {t('schema')}
           </button>
         </div>
       )}

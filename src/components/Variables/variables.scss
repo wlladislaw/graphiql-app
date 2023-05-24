@@ -7,6 +7,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 
 .btn-hide {
@@ -34,10 +35,11 @@
 }
 
 .text-area {
+  outline: none;
+  padding-left: 10px;
   width: 400px;
   height: 100px;
   background-color: rgb(72, 66, 66);
   color: rgb(204, 147, 41);
   border: 0;
-
 }
