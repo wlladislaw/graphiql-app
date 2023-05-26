@@ -14,7 +14,11 @@ function Editor() {
   const { t } = useTranslation();
   return (
     <section className="editor_container">
-      <textarea className="request-area"  placeholder={t('editor')} onChange={handleChange}>
+      <textarea
+        className="request-area"
+        placeholder={t('editor')}
+        onChange={handleChange}
+      >
         Try to write your query here
       </textarea>
       <Variables />
