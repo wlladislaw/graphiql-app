@@ -9,7 +9,7 @@ function Response() {
     <aside className="response_container">
       <textarea
         className="text_container"
-        {apiResponse == 'Error' ? t('err_responce') : apiResponse}
+        value={apiResponse == 'Error' ? t('err_responce') : apiResponse}
         placeholder="Hit the Play Button to get a response here"
       ></textarea>
     </aside>

@@ -6,10 +6,7 @@ import { queryInputSlice } from '../../redux/reducers/queryInputSlice';
 import './QueryInput.scss';
 function QueryInput() {
   const dispatch = useAppDispatch();
-  const { changeAPIInput } = apiInputSlice.actions;
- 
   const { t } = useTranslation();
-  const dispatch = useAppDispatch();
   const { queryInputValue } = useAppSelector((state) => state.queryReducer);
   const { changeQueryInputValue } = queryInputSlice.actions;
 
@@ -20,7 +17,6 @@ function QueryInput() {
         placeholder={t('api_placeholder')}
         value={queryInputValue}
         onChange={(e) => dispatch(changeQueryInputValue(e.target.value))}
-
       ></input>
     </div>
   );

@@ -9,7 +9,7 @@
   .text_container{
     width: 99%;
     height: 100%;
-    padding: 20px;
+    padding: 40px;
     background-color:inherit;
     color: #8a949c;
     font-size: 14px;
@@ -21,7 +21,7 @@
   }
 }
 
-textarea::placeholder{
+.response_container textarea::placeholder{
   text-align: center;
   padding-top: 40vh;
   color: #8a949c;
