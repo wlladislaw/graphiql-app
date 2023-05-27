@@ -35,9 +35,12 @@ function PlayButton() {
   };
 
   return (
-    <button onClick={handleGetResponse}>
-      <img className="main_button" src={mainButton} alt="main_btn" />
-    </button>
+    <img
+      className="main_button"
+      src={mainButton}
+      alt="main_btn"
+      onClick={handleGetResponse}
+    />
   );
 }
 
