@@ -17,10 +17,7 @@ function Editor() {
       <textarea
         className="request-area"
         placeholder={t('editor')}
-        onChange={handleChange}
-      >
-        Try to write your query here
-      </textarea>
+        onChange={handleChange}></textarea>
       <Variables />
       <PlayButton />
     </section>
