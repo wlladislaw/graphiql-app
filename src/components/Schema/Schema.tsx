@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './Schema.scss';
 import { useTranslation } from 'react-i18next';
+import { useAppSelector } from '../../hooks/redux';
 
 interface SchemaType {
   name: string;
@@ -13,29 +14,30 @@ interface Schema {
 const Schema = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [inputValue, setInputValue] = useState('');
+  const [error, setError] = useState(false);
   const [schema, setSchema] = useState<Schema | null>(null);
 
+  const { queryInputValue } = useAppSelector((state) => state.queryReducer);
   const { t } = useTranslation();
 
   const fetchSchema = async () => {
-    const response = await fetch('https://countries.trevorblades.com/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ query: '{ __schema { types { name } } }' }),
-    });
+    try {
+      const response = await fetch(`${queryInputValue}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ query: '{ __schema { types { name } } }' }),
+      });
 
-    const result = await response.json();
+      const result = await response.json();
+      const introspectionData = result.data.__schema;
+      console.log('introspectionData: ', introspectionData);
 
-    if (result.errors) {
-      console.error('Failed to fetch schema:', result.errors);
-      return;
+      setSchema(introspectionData);
+    } catch (error) {
+      setError(true);
     }
-    const introspectionData = result.data.__schema;
-    console.log('introspectionData: ', introspectionData);
-
-    setSchema(introspectionData);
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -72,9 +74,11 @@ const Schema = () => {
               {t('schema')}
             </button>
             <ul>
-              {schema?.types.map((type: SchemaType) => (
-                <li key={type.name}>{type.name}</li>
-              ))}
+              {error
+                ? t('err_responce')
+                : schema?.types.map((type: SchemaType) => (
+                    <li key={type.name}>{type.name}</li>
+                  ))}
             </ul>
           </div>
         </div>
