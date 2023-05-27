@@ -23,16 +23,18 @@ const Schema = () => {
         </button>
       ) : (
         <div className="schema_container">
-          <input
-            className="schema_input"
-            type="text"
-            value={inputValue}
-            onChange={handleInputChange}
-            placeholder={t('search_input')}
-          />
-          <div className="docs_container">
-            <h2>{t('queries')}</h2>
-            <p>{t('schema_message')}</p>
+          <div className="schema_text-area">
+            <input
+              className="schema_input"
+              type="text"
+              value={inputValue}
+              onChange={handleInputChange}
+              placeholder={t('search_input')}
+            />
+            <div className="docs_container">
+              <h2>{t('queries')}</h2>
+              <p>{t('schema_message')}</p>
+            </div>
           </div>
           <button className="expanded_btn" onClick={handleButtonClick}>
             {t('schema')}
