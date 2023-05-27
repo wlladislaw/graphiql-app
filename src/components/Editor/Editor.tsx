@@ -17,8 +17,7 @@ function Editor() {
       <textarea
         className="request-area"
         placeholder={t('editor')}
-        onChange={handleChange}
-      ></textarea>
+        onChange={handleChange}></textarea>
       <Variables />
       <PlayButton />
     </section>

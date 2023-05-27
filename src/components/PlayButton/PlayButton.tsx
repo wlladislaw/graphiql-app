@@ -7,7 +7,9 @@ const mainButton = require('../../assets/mainButton.svg');
 function PlayButton() {
   const dispatch = useAppDispatch();
   const { textAreaValue } = useAppSelector((state) => state.editorReducer);
+
   const { queryInputValue } = useAppSelector((state) => state.queryReducer);
+
   const { changeAPIResponse } = responseSlice.actions;
   const { t } = useTranslation();
   // https://rickandmortyapi.com/graphql
