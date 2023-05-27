@@ -4,8 +4,11 @@ import { useAppSelector } from '../../hooks/redux';
 
 function Response() {
   const { apiResponse } = useAppSelector((state) => state.responseReducer);
-  //const { t } = useTranslation();
-  return <aside className="response_container">{apiResponse}</aside>;
+  return (
+    <aside className="response_container">
+      <textarea className="text_container" value={apiResponse}></textarea>
+    </aside>
+  );
 }
 
 export default Response;
