@@ -28,7 +28,9 @@ function PlayButton() {
       }),
     })
       .then((res) => res.json())
-      .then((result) => dispatch(changeAPIResponse(JSON.stringify(result))))
+      .then((result) => {
+        dispatch(changeAPIResponse(JSON.stringify(result, null, 4)));
+      })
       .catch(() => dispatch(changeAPIResponse('Error')));
   };
 
