@@ -6,10 +6,10 @@ const mainButton = require('../../assets/mainButton.svg');
 function PlayButton() {
   const dispatch = useAppDispatch();
   const { textAreaValue } = useAppSelector((state) => state.editorReducer);
-
+  const { apiInput } = useAppSelector((state) => state.apiInputReducer);
   const { changeAPIResponse } = responseSlice.actions;
   const handleGetResponse = async () => {
-    fetch('https://rickandmortyapi.com/graphql', {
+    fetch(`${apiInput}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
