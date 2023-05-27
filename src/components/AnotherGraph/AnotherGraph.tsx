@@ -1,4 +1,6 @@
 const altair = require('./assets/altair.png');
+const playground = require('./assets/pl4.png');
+const graphlib = require('./assets/pl5.png');
 
 export function AnotherGraph() {
   return (
@@ -12,6 +14,28 @@ export function AnotherGraph() {
         >
           <img src={altair} alt="" width={'400px'} height={'400px'} />
           <div className="link-text">Altair GraphQL Client</div>
+        </a>
+      </div>
+      <div className="link-container">
+        <a
+          className="link"
+          href="https://www.apollographql.com/docs/apollo-server/v2/testing/graphql-playground/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={playground} alt="" width={'400px'} height={'400px'} />
+          <div className="link-text">GraphQL Playground</div>
+        </a>
+      </div>
+      <div className="link-container">
+        <a
+          className="link"
+          href="https://graphql.org/code/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={graphlib} alt="" width={'400px'} height={'400px'} />
+          <div className="link-text">GraphQL Code Libraries</div>
         </a>
       </div>
     </div>
