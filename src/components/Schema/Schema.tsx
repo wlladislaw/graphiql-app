@@ -14,7 +14,7 @@ interface Schema {
 const Schema = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [inputValue, setInputValue] = useState('');
-  const [error, setError] = useState(false);
+  const [err, setError] = useState(false);
   const [schema, setSchema] = useState<Schema | null>(null);
 
   const { queryInputValue } = useAppSelector((state) => state.queryReducer);
@@ -29,14 +29,11 @@ const Schema = () => {
         },
         body: JSON.stringify({ query: '{ __schema { types { name } } }' }),
       });
-
       const result = await response.json();
       const introspectionData = result.data.__schema;
-      console.log('introspectionData: ', introspectionData);
-
       setSchema(introspectionData);
     } catch (error) {
-      setError(true);
+      setError(!err);
     }
   };
 
@@ -74,7 +71,7 @@ const Schema = () => {
               {t('schema')}
             </button>
             <ul>
-              {error
+              {err
                 ? t('err_responce')
                 : schema?.types.map((type: SchemaType) => (
                     <li key={type.name}>{type.name}</li>
