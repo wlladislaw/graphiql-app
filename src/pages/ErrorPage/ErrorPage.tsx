@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage';
-import './ErrorPage.scss';
 import { Link } from 'react-router-dom';
+import './ErrorPage.scss';
 
 export const ErrorPage = () => {
   const { t } = useTranslation();

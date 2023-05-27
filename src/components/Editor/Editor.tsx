@@ -1,9 +1,9 @@
 import Variables from '../Variables/Variables';
-import './Editor.scss';
 import PlayButton from '../../components/PlayButton/PlayButton';
 import { useAppDispatch } from '../../hooks/redux';
 import { editorSlice } from '../../redux/reducers/editorSlice';
 import { useTranslation } from 'react-i18next';
+import './Editor.scss';
 
 function Editor() {
   const dispatch = useAppDispatch();
@@ -17,7 +17,8 @@ function Editor() {
       <textarea
         className="request-area"
         placeholder={t('editor')}
-        onChange={handleChange}></textarea>
+        onChange={handleChange}
+      ></textarea>
       <Variables />
       <PlayButton />
     </section>

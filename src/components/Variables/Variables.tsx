@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import './variables.scss';
 import { useTranslation } from 'react-i18next';
+import './variables.scss';
 
 const Variables = () => {
   const [showTextAreaQuery, setShowTextAreaQuery] = useState(false);

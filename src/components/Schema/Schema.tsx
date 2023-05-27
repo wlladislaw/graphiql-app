@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import './Schema.scss';
 import { useTranslation } from 'react-i18next';
+import './Schema.scss';
 
 const Schema = () => {
   const [isExpanded, setIsExpanded] = useState(false);

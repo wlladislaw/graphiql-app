@@ -1,6 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Footer } from './components/Footer/Footer';
-import './App.scss';
 import SignIn from './components/Auth/SignIn';
 import SignUp from './components/Auth/SignUp';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -11,6 +10,7 @@ import Main from './pages/Main/Main';
 import { ErrorPage } from './pages/ErrorPage/ErrorPage';
 import { PropsWithChildren } from 'react';
 import About from './pages/About/About';
+import './App.scss';
 
 export function App() {
   const [user, loading] = useAuthState(auth);
