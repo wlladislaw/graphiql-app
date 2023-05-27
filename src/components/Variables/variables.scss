@@ -1,6 +1,5 @@
 .container-var {
   position: absolute;
-  font-family: 'Source Code Pro','Consolas','Inconsolata','Droid Sans Mono','Monaco',monospace;
   font-family: 14px;
   bottom: 0;
   left: 0;
@@ -11,11 +10,18 @@
 }
 
 .btn-hide {
-  width: 400px;
-  height: 10px;
-  background-color: rgb(72, 66, 66);
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  text-decoration: none;
+  width: 15px;
+  height: 15px;
   border: 0;
-  cursor: pointer;
+  opacity: 0.5;
+  cursor:pointer;
+  :hover{
+    fill: aliceblue;
+  }
 }
 
 .variables_container-1 {

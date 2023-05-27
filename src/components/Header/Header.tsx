@@ -1,10 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom';
-import './Header.scss';
-const graphLogo = require('../../assets/GraphQL_Logo.svg.png');
 import { logout, auth } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+const graphLogo = require('../../assets/GraphQL_Logo.svg.png');
+import './Header.scss';
 
 export function Header() {
   const [toggle, setToggle] = useState(false);
