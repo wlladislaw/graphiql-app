@@ -6,10 +6,12 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    &__container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .footer_left{
+      display: flex;
+      align-items: center;
+    }
+    .container {
+        width: 60%;
     }
     &__copyright {
         font-weight: 400;
