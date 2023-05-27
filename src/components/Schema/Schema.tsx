@@ -1,18 +1,24 @@
 import { useState } from 'react';
 import './Schema.scss';
 import { useTranslation } from 'react-i18next';
-import { buildClientSchema, getIntrospectionQuery } from 'graphql';
-import { parse } from 'graphql/language';
+
+interface SchemaType {
+  name: string;
+  __typename: string;
+}
+interface Schema {
+  types: SchemaType[];
+}
 
 const Schema = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [inputValue, setInputValue] = useState('');
-  const [schema, setSchema] = useState(null);
+  const [schema, setSchema] = useState<Schema | null>(null);
 
   const { t } = useTranslation();
 
   const fetchSchema = async () => {
-    const response = await fetch('https://rickandmortyapi.com/graphql', {
+    const response = await fetch('https://countries.trevorblades.com/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -28,21 +34,8 @@ const Schema = () => {
     }
     const introspectionData = result.data.__schema;
     console.log('introspectionData: ', introspectionData);
-    // const clientSchema = buildClientSchema(introspectionData);
-    // console.log('clientSchema: ', clientSchema);
 
-    //setSchema(clientSchema);
-  };
-
-  const handleParseQuery = (query) => {
-    try {
-      const parsedQuery = parse(query);
-      console.log('parsedQuery: ', parsedQuery);
-
-      // Дополнительная обработка или отображение распарсенного запроса
-    } catch (error) {
-      console.error('Failed to parse query:', error);
-    }
+    setSchema(introspectionData);
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -52,15 +45,6 @@ const Schema = () => {
   const handleButtonClick = () => {
     setIsExpanded(!isExpanded);
     fetchSchema();
-    handleParseQuery(`
-    query charactersQuery {
-      characters {
-        results {
-          name
-        }
-      }
-    }
-  `);
   };
 
   return (
@@ -80,11 +64,19 @@ const Schema = () => {
           />
           <div className="docs_container">
             <h2>{t('queries')}</h2>
-            <p>{t('schema_message')}</p>
+            {!schema && <p>{t('schema_message')}</p>}
+            <button
+              className="expanded_btn"
+              onClick={() => setIsExpanded(!isExpanded)}
+            >
+              {t('schema')}
+            </button>
+            <ul>
+              {schema?.types.map((type: SchemaType) => (
+                <li key={type.name}>{type.name}</li>
+              ))}
+            </ul>
           </div>
-          <button className="expanded_btn" onClick={handleButtonClick}>
-            {t('schema')}
-          </button>
         </div>
       )}
     </div>
