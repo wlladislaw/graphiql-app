@@ -11,6 +11,7 @@ import Main from './pages/Main/Main';
 import { ErrorPage } from './pages/ErrorPage/ErrorPage';
 import { PropsWithChildren } from 'react';
 import About from './pages/About/About';
+import { AnotherGraph } from './components/AnotherGraph/AnotherGraph';
 
 export function App() {
   const [user, loading] = useAuthState(auth);
@@ -48,7 +49,9 @@ export function App() {
           />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
+        <AnotherGraph />
       </div>
+      {/* <AnotherGraph /> */}
       <Footer />
     </>
   );
