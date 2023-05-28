@@ -24,20 +24,16 @@ export function Header() {
     <header>
       <nav className="nav_inner">
         <Link to="/">
-          <img src={graphLogo} alt="graphLogo" width={35} height={35} />
+          <img
+            src={graphLogo}
+            className="logo"
+            alt="graphLogo"
+            width={35}
+            height={35}
+          />
         </Link>
+
         <div className="links">
-          <Link className="links_item" to="/">
-            {t('welcome')}
-          </Link>
-          <Link className="links_item" to="/about">
-            {t('about')}
-          </Link>
-          {user && (
-            <button className="signOut_btn" onClick={handleSignOut}>
-              {t('sing-out')}
-            </button>
-          )}
           {toggle ? (
             <button
               onClick={() => changeLanguage('en')}
@@ -51,6 +47,35 @@ export function Header() {
               className="language_button"
             >
               RU
+            </button>
+          )}
+          <Link className="links_item" to="/">
+            {t('welcome')}
+          </Link>
+          <Link className="links_item" to="/about">
+            {t('about')}
+          </Link>
+          {!user && (
+            <>
+              <Link
+                to="/signIn"
+                className="links_item"
+                style={{ textDecoration: 'none' }}
+              >
+                {t('sing-in')}
+              </Link>
+              <Link
+                to="/signUp"
+                className="links_item"
+                style={{ textDecoration: 'none' }}
+              >
+                {t('sing-up')}
+              </Link>
+            </>
+          )}
+          {user && (
+            <button className="signOut_btn" onClick={handleSignOut}>
+              {t('sing-out')}
             </button>
           )}
         </div>
