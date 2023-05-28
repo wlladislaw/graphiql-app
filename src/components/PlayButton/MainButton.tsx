@@ -1,6 +1,10 @@
+function MainButton(props: { onClick: () => void }) {
+  return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1024 1024"
+      className="main_button"
+      onClick={props.onClick}
     >
       <path
         fill="#rgb(11,20,28)"
@@ -16,3 +20,7 @@
         d="M676.1 505.3L457.7 346.5A8 8 0 0 0 445 353v317.6a8.02 8.02 0 0 0 12.7 6.5l218.4-158.9a7.9 7.9 0 0 0 0-12.9z"
       />
     </svg>
+  );
+}
+
+export default MainButton;

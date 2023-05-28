@@ -1,9 +1,9 @@
 import Variables from '../Variables/Variables';
-import './Editor.scss';
 import PlayButton from '../../components/PlayButton/PlayButton';
 import { useAppDispatch } from '../../hooks/redux';
 import { editorSlice } from '../../redux/reducers/editorSlice';
 import { useTranslation } from 'react-i18next';
+import './Editor.scss';
 
 function Editor() {
   const dispatch = useAppDispatch();
@@ -14,9 +14,11 @@ function Editor() {
   const { t } = useTranslation();
   return (
     <section className="editor_container">
-      <textarea className="request-area"  placeholder={t('editor')} onChange={handleChange}>
-        Try to write your query here
-      </textarea>
+      <textarea
+        className="request-area"
+        placeholder={t('editor')}
+        onChange={handleChange}
+      ></textarea>
       <Variables />
       <PlayButton />
     </section>

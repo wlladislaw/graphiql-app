@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import './variables.scss';
 import { useTranslation } from 'react-i18next';
+const CloseButton = require('../../assets/close.svg');
+import './variables.scss';
 
 const Variables = () => {
   const [showTextAreaQuery, setShowTextAreaQuery] = useState(false);
@@ -32,8 +33,14 @@ const Variables = () => {
 
   return (
     <div className="container-var">
-      <button onClick={handlerHide} className="btn-hide"></button>
       <div>
+        {showTextAreaQuery || showTextAreaHttp ? (
+          <img
+            src={CloseButton}
+            onClick={handlerHide}
+            className="btn-hide"
+          ></img>
+        ) : null}
         <button onClick={handlerQuery} className={classQuery}>
           {t('query_variables')}
         </button>

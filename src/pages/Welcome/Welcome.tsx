@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom';
-import './Welcome.scss';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
 import { useTranslation } from 'react-i18next';
 import { AnotherGraph } from '../../components/AnotherGraph/AnotherGraph';
+import './Welcome.scss';
+
 const GrafQLLogo = require('../../assets/graphql.svg');
 
 export const Welcome = () => {
