@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { useAppSelector, useAppDispatch } from '../../hooks/redux';
 import { responseSlice } from '../../redux/reducers/responseSlice';
 import MainButton from './MainButton';
@@ -11,8 +10,6 @@ function PlayButton() {
   const { queryInputValue } = useAppSelector((state) => state.queryReducer);
 
   const { changeAPIResponse } = responseSlice.actions;
-  const { t } = useTranslation();
-  // https://rickandmortyapi.com/graphql
 
   const handleGetResponse = async () => {
     fetch(`${queryInputValue}`, {
