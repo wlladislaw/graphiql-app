@@ -52,6 +52,7 @@ module.exports = {
       patterns: [
         { from: 'src', to: 'dest' },
         { from: './src/assets/favicon.svg', to: 'favicon.svg' },
+        { from: './src/locales', to: 'locales' },
       ],
     }),
   ],
