@@ -1,0 +1,101 @@
+.sign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #dcdcdc;
+  padding: 30px;
+}
+
+.sign__input {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.sign__btn {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border: none;
+  color: white;
+  background-color: black;
+}
+
+.sign div {
+  margin-top: 7px;
+}
+.link{
+  margin-top: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.form{
+  position: relative;
+  top: 10rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  padding: 40px 25px;
+  background-color: rgba(216, 22, 142, 0.304);
+  border-radius: 25px;
+  h2 {
+    text-align: center;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  label {
+    display: block;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+  }
+  input {
+    width: 100%;
+    height: 30px;
+    padding: 5px 15px;
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    color: #353535;
+    border-radius: 10px;
+    font-size: 16px;
+    &:focus {
+      outline: 1px solid rgb(129, 49, 49);
+    }
+  }
+  button {
+    padding: 10px;
+    margin-top: 30px;
+    font-size: 18px;
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    background-image: linear-gradient(
+      257deg,
+      rgba(216, 22, 142, 0.481),
+      rgba(177, 41, 125, 0.729)
+    );
+    &:hover{
+      background-image: linear-gradient(
+      257deg,
+      rgba(216, 22, 142, 0.881),
+      rgba(177, 41, 125, 0.729)
+    );
+    }
+  }
+}
+
+.error{
+  color: rgb(244, 200, 4);
+  margin-top: 8px;
+}
