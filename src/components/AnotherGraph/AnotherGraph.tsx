@@ -13,8 +13,8 @@ export function AnotherGraph() {
           rel="noreferrer"
         >
           <img src={altair} alt="" width={'400px'} height={'400px'} />
-          <div className="link-text">Altair GraphQL Client</div>
         </a>
+        <div className="link-text">Altair GraphQL Client</div>
       </div>
       <div className="link-container">
         <a
@@ -23,9 +23,9 @@ export function AnotherGraph() {
           target="_blank"
           rel="noreferrer"
         >
-          <img src={playground} alt="" width={'400px'} height={'400px'} />
-          <div className="link-text">GraphQL Playground</div>
+          <img src={playground} alt="" width={'600px'} height={'600px'} />
         </a>
+        <div className="link-text">GraphQL Playground</div>
       </div>
       <div className="link-container">
         <a
@@ -35,8 +35,8 @@ export function AnotherGraph() {
           rel="noreferrer"
         >
           <img src={graphlib} alt="" width={'400px'} height={'400px'} />
-          <div className="link-text">GraphQL Code Libraries</div>
         </a>
+        <div className="link-text">GraphQL Code Libraries</div>
       </div>
     </div>
   );
