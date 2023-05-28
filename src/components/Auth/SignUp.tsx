@@ -9,9 +9,6 @@ import { useTranslation } from 'react-i18next';
 const SingInForm = () => {
   const [user, loading] = useAuthState(auth);
   const { t } = useTranslation();
-  // const [name, setName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -84,7 +81,7 @@ const SingInForm = () => {
       <input
         id="password"
         name="password"
-        type="string"
+        type="password"
         value={formik.values.password}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}

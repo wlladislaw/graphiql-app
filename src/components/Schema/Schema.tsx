@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import './Schema.scss';
 import { useTranslation } from 'react-i18next';
+import './Schema.scss';
+
 import { useAppSelector } from '../../hooks/redux';
 
 interface SchemaType {
@@ -54,6 +55,7 @@ const Schema = () => {
         </button>
       ) : (
         <div className="schema_container">
+
           <input
             className="schema_input"
             type="text"
@@ -77,6 +79,7 @@ const Schema = () => {
                     <li key={type.name}>{type.name}</li>
                   ))}
             </ul>
+
           </div>
         </div>
       )}

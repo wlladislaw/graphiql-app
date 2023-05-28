@@ -1,15 +1,19 @@
   .footer {
-    position: absolute;
-    bottom: 0;
+    // position: absolute;
+    // bottom: 0;
     padding: 18px 10rem;
+    padding-top: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    &__container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    background-color: rgba(15, 15, 15, 0.829);
+    .footer_left{
+      display: flex;
+      align-items: center;
+    }
+    .container {
+        width: 60%;
     }
     &__copyright {
         font-weight: 400;
