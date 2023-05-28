@@ -49,7 +49,10 @@ module.exports = {
       template: path.resolve(__dirname, '..', './src/index.html'),
     }),
     new CopyPlugin({
-      patterns: [{ from: 'src', to: 'dest' }],
+      patterns: [
+        { from: 'src', to: 'dest' },
+        { from: './src/assets/favicon.svg', to: 'favicon.svg' },
+      ],
     }),
   ],
   stats: 'errors-only',

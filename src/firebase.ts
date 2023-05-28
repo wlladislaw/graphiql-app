@@ -6,7 +6,6 @@ import {
   signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  sendPasswordResetEmail,
   signOut,
 } from 'firebase/auth';
 
@@ -50,7 +49,6 @@ const signInWithGoogle = async () => {
     }
   } catch (err) {
     console.error(err);
-    // alert(err.message);
   }
 };
 
@@ -59,7 +57,6 @@ const logInWithEmailAndPassword = async (email: string, password: string) => {
     await signInWithEmailAndPassword(auth, email, password);
   } catch (err) {
     console.error(err);
-    // alert(err.message);
   }
 };
 
@@ -79,17 +76,6 @@ const registerWithEmailAndPassword = async (
     });
   } catch (err) {
     console.error(err);
-    // alert(err.message);
-  }
-};
-
-const sendPasswordReset = async (email: string) => {
-  try {
-    await sendPasswordResetEmail(auth, email);
-    alert('Password reset link sent!');
-  } catch (err) {
-    console.error(err);
-    // alert(err.message);
   }
 };
 
@@ -103,6 +89,5 @@ export {
   signInWithGoogle,
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
-  sendPasswordReset,
   logout,
 };

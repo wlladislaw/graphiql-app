@@ -39,6 +39,7 @@ const Variables = () => {
             src={CloseButton}
             onClick={handlerHide}
             className="btn-hide"
+            alt="closeVariables"
           ></img>
         ) : null}
         <button onClick={handlerQuery} className={classQuery}>
