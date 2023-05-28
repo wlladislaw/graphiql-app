@@ -75,7 +75,7 @@ const registerWithEmailAndPassword = async (
       email,
     });
   } catch (err) {
-    alert(err.message);
+    console.error(err);
   }
 };
 

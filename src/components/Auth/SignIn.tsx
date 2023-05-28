@@ -1,9 +1,9 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth, logInWithEmailAndPassword, db } from '../../firebase';
+import { auth, logInWithEmailAndPassword } from '../../firebase';
 import './Sign.scss';
 import { useTranslation } from 'react-i18next';
 
