@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
 import { useTranslation } from 'react-i18next';
 import './Welcome.scss';
+import { AnotherGraph } from '../../components/AnotherGraph/AnotherGraph';
 const GrafQLLogo = require('../../assets/graphql.svg');
 
 export const Welcome = () => {
@@ -25,6 +26,7 @@ export const Welcome = () => {
           <p>{t('description3')}</p>
         </div>
       </div>
+      <AnotherGraph />
     </div>
   );
 };
