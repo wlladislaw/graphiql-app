@@ -40,6 +40,9 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js',
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(process.env),
@@ -52,6 +55,7 @@ module.exports = {
       patterns: [
         { from: 'src', to: 'dest' },
         { from: './src/assets/favicon.svg', to: 'favicon.svg' },
+        { from: './src/locales', to: 'locales' },
       ],
     }),
   ],
