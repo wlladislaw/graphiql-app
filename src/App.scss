@@ -24,3 +24,24 @@
   background-color: rgba(15, 15, 15, 0.829);
 }
 
+.another-graph {
+  display: flex;
+  justify-content: space-around;
+  height: 400px;
+  width: 100%;
+  margin-top: 200px;
+  .link-container {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    .link {
+      text-decoration: none;
+    }
+    .link-text {
+      width: 400px;
+      font-size: 24px;
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+}
